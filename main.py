@@ -15,8 +15,7 @@ def dijkstra(graph, start):
         
         for neighbor, weight in graph[current_node]:
             distance = current_distance + weight
-            
-            # Agar yangi yo‘l qisqaroq bo‘lsa
+        
             if distance < distances[neighbor]:
                 distances[neighbor] = distance
                 heapq.heappush(priority_queue, (distance, neighbor))
