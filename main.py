@@ -1,7 +1,7 @@
 import heapq
 
 def dijkstra(graph, start):
-    # Boshlang'ich qiymatlar
+    
     distances = {node: float('inf') for node in graph}
     distances[start] = 0
     
@@ -10,7 +10,6 @@ def dijkstra(graph, start):
     while priority_queue:
         current_distance, current_node = heapq.heappop(priority_queue)
         
-        # Agar eski qiymat bo‘lsa, o'tkazib yuboramiz
         if current_distance > distances[current_node]:
             continue
         
@@ -25,7 +24,6 @@ def dijkstra(graph, start):
     return distances
 
 
-# Graf (adjacency list ko‘rinishida)
 graph = {
     'A': [('B', 5), ('C', 1)],
     'B': [('A', 5), ('C', 2), ('D', 1)],
